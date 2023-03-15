@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 연습 - 속성 선택지</title>
+    <style>
+    /*attribute : 태그의 속성, Property*/
+    /*속성석택자 : [attr]*/
+
+    a {text-decoration:  non; }
+    a[href] {color:bisque}
+    [href^="http"] {font-weight: bold; font-size: 20px;}
+    [href$=".pdf"] {font-size: 30px;}
+    [href*="tel"] :before {font-size: 50px;}
+    [title] {font-size: 80px;}
+
+    img { width: 200px; height: 300px; margin-right: 400px; }
+    [src$:".jpg"] { boder:5px colg }
+
+       </style>
+</head>
+<body>
+    <div>
+        <a title="href가 없는 링크">링크1</a><br>
+        <a href="kbs.html" title="href가 있는 링크">링크2</a><br>
+        <a href="http://www.googl.com" title="구글링크">링크3</a><br>
+        <a href="guide.pdf" title="문서 다운로드 링크">링크4</a><br>
+        <a href="http://www.naver.com" title="네이버링크">링크5</a><br>
+        <a href="http://github.com" title="깃허브 링크">링크6</a><br>
+        <a href="tel:010-9270-8703" title="전화걸기 링크">링크7</a><br>
+        <a href="sms:010-9270-8703" title="문자보내기 링크">링크8</a><br>
+    </div>
+    <div>
+        <img src="1.jpg" alt="">
+        <img src="1.png" alt="">
+        <img src="1.gif" alt="">
+        <img src="1.fiff" alt="">
+    </div>
+</body>
+</html>

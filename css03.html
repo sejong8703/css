@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 연습 - 구조 선택지</title>
+    
+    <style>
+    /*div.con>ul.lst$*2>li{내용}*4*/
+    /* 형제 요소*/
+    h2+ul {list-style: square;} /*인접(next) 효소 선택지 형 + 동생 */
+    h2~ul {list-style: circle;} /*인접(next ~ all) 선택wl*/
+    .con li { text-decoration: underline;} /* 조상 후손*/
+    .con > ul {border-bottom:2px solid red;}/* 부모 자식 */
+    /* 순서 위치 선택지*/
+    li:first-child {color: silver;}/*첫번째*/
+    li:last-child {color: yellow;} /*마지막요소*/
+    li:ntnh-child(2) {color: purple};/*2번째 요소*/
+    li:only-child {font-style: italic};/*독자*/
+    li:ntnh-child(2n) {background-color: aqua;}/*짝수*/
+    li:ntnh-chold(2n+1) {background-color: brown;}/*홀수*/
+
+    li:frist-of-type { padding-left: 120px; }/*순서가 중요함*/
+    /* last-of-type, ntn-of-type 등 도 있음*/
+    p:empty::before, div:empty::before {
+        content:"자식 또는 내용이 없는 요소";}
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h2>div 요소 안의 목록 요소</h2>
+        <ul class="lst1">
+            <li>내용</li>
+            <li>내용</li>
+            <li>내용</li>
+            <li>내용</li>
+        </ul>
+        <ul class="lst2">
+            <li>내용</li>
+            <li>내용</li>
+            <li>내용</li>
+            <li>내용</li>
+        </ul>
+        <ul class-"lst3"></ul>
+            <li>내용</li>
+    </div>
+    <hr>
+    <article>
+        <h2>article 요소 안의 목록</h2>
+        <ul>
+            <li>목록1</li>
+            <li>목록2</li>
+            <li>목록3</li>
+            <li>목록4</li>
+            <li>목록5</li>
+        </ul>
+        <ol>
+            <li>목록1</li>
+            <li>목록2</li>
+            <li>목록3</li>
+            <li>목록4</li>
+            <li>목록5</li>
+        </ol>
+    </article>
+    <div class="con" title="자식이 없는 요소"></div>
+    <div class="con">여기는 내용
+         <p title="내용이 없는 요서"</p>
+         </div>
+
+</body>
+</html>

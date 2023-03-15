@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 연습 - 링크선택자</title>
+    <style>
+    a { font-size:24px; text-decoration: none; 
+    padding:8px; }
+    /* 링크 선택자 */
+    a:link { color:deeppink; }
+    a:visited { color:orange; }
+    a:hover { background-color:deeppink; color:#fff; }
+    a:active { background-color: black; color:gold; }
+
+    /* 전/후 선택자 */
+    a::before { content:"★ "}
+    a::after { content:"-"attr(href); }
+
+    /* 첫글자/첫줄 선택자 */
+    p::first-letter { font-size:36px;  }
+    p::first-line { color:red; }
+
+    #btn1 { display:block; width: 300px; height: 40px; }
+    #ck1:checked + #btn1:before { content:"펼침"; }
+    #ck1:not(:checked) + #btn1:before { content:"접힘"; } 
+    #box { width:500px; height:300px; border:3px solid #333; 
+    background-color:gold; transition:0.5s; }
+    #ck1:checked ~ #box { visibility: visible; opacity:1;  }
+    #ck1:not(:checked) ~ #box { visibility:hidden; opacity:0; }
+
+    section { width: 600px; height:300px; 
+        border:3px solid black;
+        background-color: aqua; display: none; }
+    section:target { display:block; }
+    /* 폼 관련 선택자
+    input :enabled - 사용가능한 input 요소를 선택
+    input :disabled - 사용 불가능한 input 요소를 선택
+    input :focus - c초점 (커서)가 들어왔을때 선택
+    input :placeholder - placeholder 속성의 값을 선택
+    */
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="https://www.google.com" title="구글">링크1</a><br><br>
+        <a href="https://www.naver.com" title="네이버">링크2</a><br><br>
+        <a href="https://www.tjoeun.co.kr" title="더조은">링크3</a><br><br>
+        <a href="https://www.daum.net" title="다음">링크4</a><br><br>
+        <a title="링크 없는 a요소">링크5</a><br><br>
+    </nav>
+    <div>
+        <p>우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳 우리나라 대한민국 아름다운 금수강산 누구나 즐기고, 누구나 
+            자유롭게 누릴 수 있는 곳</p>
+        <p>경기도 고양시 일산동구 정발산동 경기도 고양시 일산동구 정발산동 
+            경기도 고양시 일산동구 정발산동 경기도 고양시 일산동구 정발산동 
+            경기도 고양시 일산동구 정발산동 경기도 고양시 일산동구 정발산동 
+            경기도 고양시 일산동구 정발산동 경기도 고양시 일산동구 정발산동 
+            경기도 고양시 일산동구 정발산동 경기도 고양시 일산동구 정발산동 
+            경기도 고양시 일산동구 정발산동 경기도 고양시 일산동구 정발산동 
+        </p>
+    </div>
+    <hr>
+    <input type="checkbox" id="ck1">
+    <label for="ck1" id="btn1"></label>
+    <div id="box">여기는 펼침창</div>
+    <div>
+        <ul>
+            <li><a href="#sec1">메뉴1</a></li>
+            <li><a href="#sec2">메뉴2</a></li>
+            <li><a href="#sec3">메뉴3</a></li>
+        </ul>
+    </div>
+    <section id="sec1">
+        <h2>섹션 제목1</h2>
+    </section>
+    <section id="sec2">
+        <h2>섹션 제목2</h2>
+    </section>
+    <section id="sec3">
+        <h2>섹션 제목3</h2>
+    </section>
+</body>
+</html>

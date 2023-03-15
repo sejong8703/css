@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일 연습</title>
+    <style>
+        /* 
+        스타일 지정의 기본 문법
+        선택자 { 스타일속성:값; 스타일속성2:값; }q  1
+        선택자 : 스타일을 부여할 대상
+        */
+    * { margin: 0; padding: 0; } /* 전체 선택자 */    
+    h2 { border-bottom:3px dotted deeppink; } /*태그선택자*/
+    .para { color: deepskyblue; } /*클랙스 선택지*/
+    #con1 { font-size: 24px; } /*아이디 선택지*/
+    p { color: red; }
+    p.para {color: aqua; } /*복합선택자*/    
+    div, p { border-top:1px solid #333; margin-top: 30px; } /* 복수선택자 */
+    /*복수선택자 ,를 활용해서 요소요소를 바꿈,*/
+    /* 복합 선택자 아이디와 클래스등 석어서 지정하는 것, (많이 안쓰는게 좋음)*/ 
+    /* 태그 < 클래스 < 아이디 */
+    /* !important 는 우선순위를 무시하고 적용됨, 엥간하면 쓰지말아라*/
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h2>제목</h2>
+        <p id="con1" class="para">김세종</p>
+        <p id="con2" class="para">이다영</p>
+        <p id="con3" class="para">이소영</p>
+    </div>
+</body>
+</html>
